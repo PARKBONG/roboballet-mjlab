@@ -1,0 +1,219 @@
+<!-- Modified from the RoboBallet archive's data/mujoco_world/assets/franka_emika_panda/panda_nohand.xml, itself from MuJoCo Menagerie franka_emika_panda, Apache 2.0: collision spheres and a stick added. See NOTICE. -->
+<mujoco model="panda_spheres_stick">
+  <!-- 36 collision spheres, stick with TCP at 0.16 m on the attachment frame, 16 excludes. Meshes in group 2 are visual only: sim/world.py strips them unless WorldCfg.visual_meshes. -->
+  <compiler angle="radian" meshdir="../../../data/mujoco_world/assets/franka_emika_panda/assets" autolimits="true" />
+  <default>
+    <default class="panda">
+      <material specular="0.5" shininess="0.25" />
+      <joint armature="0.1" damping="1" axis="0 0 1" range="-2.8973 2.8973" />
+      <default class="panda/visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4" />
+      <default class="panda/sphere">
+        <geom type="sphere" group="3" mass="0" contype="1" conaffinity="1" rgba="0.9 0.3 0.2 0.35" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material class="panda" name="white" rgba="1 1 1 1" />
+    <material class="panda" name="off_white" rgba="0.901961 0.921569 0.929412 1" />
+    <material class="panda" name="dark_grey" rgba="0.25 0.25 0.25 1" />
+    <material class="panda" name="green" rgba="0 1 0 1" />
+    <material class="panda" name="light_blue" rgba="0.039216 0.541176 0.780392 1" />
+    <mesh name="link0_0" file="link0_0.obj" />
+    <mesh name="link0_1" file="link0_1.obj" />
+    <mesh name="link0_2" file="link0_2.obj" />
+    <mesh name="link0_3" file="link0_3.obj" />
+    <mesh name="link0_4" file="link0_4.obj" />
+    <mesh name="link0_5" file="link0_5.obj" />
+    <mesh name="link0_7" file="link0_7.obj" />
+    <mesh name="link0_8" file="link0_8.obj" />
+    <mesh name="link0_9" file="link0_9.obj" />
+    <mesh name="link0_10" file="link0_10.obj" />
+    <mesh name="link0_11" file="link0_11.obj" />
+    <mesh name="link1" file="link1.obj" />
+    <mesh name="link2" file="link2.obj" />
+    <mesh name="link3_0" file="link3_0.obj" />
+    <mesh name="link3_1" file="link3_1.obj" />
+    <mesh name="link3_2" file="link3_2.obj" />
+    <mesh name="link3_3" file="link3_3.obj" />
+    <mesh name="link4_0" file="link4_0.obj" />
+    <mesh name="link4_1" file="link4_1.obj" />
+    <mesh name="link4_2" file="link4_2.obj" />
+    <mesh name="link4_3" file="link4_3.obj" />
+    <mesh name="link5_0" file="link5_0.obj" />
+    <mesh name="link5_1" file="link5_1.obj" />
+    <mesh name="link5_2" file="link5_2.obj" />
+    <mesh name="link6_0" file="link6_0.obj" />
+    <mesh name="link6_1" file="link6_1.obj" />
+    <mesh name="link6_2" file="link6_2.obj" />
+    <mesh name="link6_3" file="link6_3.obj" />
+    <mesh name="link6_4" file="link6_4.obj" />
+    <mesh name="link6_5" file="link6_5.obj" />
+    <mesh name="link6_6" file="link6_6.obj" />
+    <mesh name="link6_7" file="link6_7.obj" />
+    <mesh name="link6_8" file="link6_8.obj" />
+    <mesh name="link6_9" file="link6_9.obj" />
+    <mesh name="link6_10" file="link6_10.obj" />
+    <mesh name="link6_11" file="link6_11.obj" />
+    <mesh name="link6_12" file="link6_12.obj" />
+    <mesh name="link6_13" file="link6_13.obj" />
+    <mesh name="link6_14" file="link6_14.obj" />
+    <mesh name="link6_15" file="link6_15.obj" />
+    <mesh name="link6_16" file="link6_16.obj" />
+    <mesh name="link7_0" file="link7_0.obj" />
+    <mesh name="link7_1" file="link7_1.obj" />
+    <mesh name="link7_2" file="link7_2.obj" />
+    <mesh name="link7_3" file="link7_3.obj" />
+    <mesh name="link7_4" file="link7_4.obj" />
+    <mesh name="link7_5" file="link7_5.obj" />
+    <mesh name="link7_6" file="link7_6.obj" />
+    <mesh name="link7_7" file="link7_7.obj" />
+  </asset>
+  <worldbody>
+    <body name="link0" childclass="panda">
+      <site name="base_site" />
+      <inertial mass="0.629769" pos="-0.041018 -0.00014 0.049974" fullinertia="0.00315 0.00388 0.004285 8.2904e-7 0.00015 8.2299e-6" />
+      <geom mesh="link0_0" material="off_white" class="panda/visual" />
+      <geom mesh="link0_1" material="dark_grey" class="panda/visual" />
+      <geom mesh="link0_2" material="off_white" class="panda/visual" />
+      <geom mesh="link0_3" material="dark_grey" class="panda/visual" />
+      <geom mesh="link0_4" material="off_white" class="panda/visual" />
+      <geom mesh="link0_5" material="dark_grey" class="panda/visual" />
+      <geom mesh="link0_7" material="white" class="panda/visual" />
+      <geom mesh="link0_8" material="white" class="panda/visual" />
+      <geom mesh="link0_9" material="dark_grey" class="panda/visual" />
+      <geom mesh="link0_10" material="off_white" class="panda/visual" />
+      <geom mesh="link0_11" material="white" class="panda/visual" />
+      <body name="link1" pos="0 0 0.333">
+        <inertial mass="4.970684" pos="0.003875 0.002081 -0.04762" fullinertia="0.70337 0.70661 0.0091170 -0.00013900 0.0067720 0.019169" />
+        <joint name="joint1" />
+        <geom material="white" mesh="link1" class="panda/visual" />
+        <body name="link2" quat="1 -1 0 0">
+          <inertial mass="0.646926" pos="-0.003141 -0.02872 0.003495" fullinertia="0.0079620 2.8110e-2 2.5995e-2 -3.925e-3 1.0254e-2 7.04e-4" />
+          <joint name="joint2" range="-1.7628 1.7628" />
+          <geom material="white" mesh="link2" class="panda/visual" />
+          <body name="link3" pos="0 -0.316 0" quat="1 1 0 0">
+            <joint name="joint3" />
+            <inertial mass="3.228604" pos="2.7518e-2 3.9252e-2 -6.6502e-2" fullinertia="3.7242e-2 3.6155e-2 1.083e-2 -4.761e-3 -1.1396e-2 -1.2805e-2" />
+            <geom mesh="link3_0" material="white" class="panda/visual" />
+            <geom mesh="link3_1" material="white" class="panda/visual" />
+            <geom mesh="link3_2" material="white" class="panda/visual" />
+            <geom mesh="link3_3" material="dark_grey" class="panda/visual" />
+            <body name="link4" pos="0.0825 0 0" quat="1 1 0 0">
+              <inertial mass="3.587895" pos="-5.317e-2 1.04419e-1 2.7454e-2" fullinertia="2.5853e-2 1.9552e-2 2.8323e-2 7.796e-3 -1.332e-3 8.641e-3" />
+              <joint name="joint4" range="-3.0718 -0.0698" />
+              <geom mesh="link4_0" material="white" class="panda/visual" />
+              <geom mesh="link4_1" material="white" class="panda/visual" />
+              <geom mesh="link4_2" material="dark_grey" class="panda/visual" />
+              <geom mesh="link4_3" material="white" class="panda/visual" />
+              <body name="link5" pos="-0.0825 0.384 0" quat="1 -1 0 0">
+                <inertial mass="1.225946" pos="-1.1953e-2 4.1065e-2 -3.8437e-2" fullinertia="3.5549e-2 2.9474e-2 8.627e-3 -2.117e-3 -4.037e-3 2.29e-4" />
+                <joint name="joint5" />
+                <geom mesh="link5_0" material="dark_grey" class="panda/visual" />
+                <geom mesh="link5_1" material="white" class="panda/visual" />
+                <geom mesh="link5_2" material="white" class="panda/visual" />
+                <body name="link6" quat="1 1 0 0">
+                  <inertial mass="1.666555" pos="6.0149e-2 -1.4117e-2 -1.0517e-2" fullinertia="1.964e-3 4.354e-3 5.433e-3 1.09e-4 -1.158e-3 3.41e-4" />
+                  <joint name="joint6" range="-0.0175 3.7525" />
+                  <geom mesh="link6_0" material="off_white" class="panda/visual" />
+                  <geom mesh="link6_1" material="white" class="panda/visual" />
+                  <geom mesh="link6_2" material="dark_grey" class="panda/visual" />
+                  <geom mesh="link6_3" material="white" class="panda/visual" />
+                  <geom mesh="link6_4" material="white" class="panda/visual" />
+                  <geom mesh="link6_5" material="white" class="panda/visual" />
+                  <geom mesh="link6_6" material="white" class="panda/visual" />
+                  <geom mesh="link6_7" material="light_blue" class="panda/visual" />
+                  <geom mesh="link6_8" material="light_blue" class="panda/visual" />
+                  <geom mesh="link6_9" material="dark_grey" class="panda/visual" />
+                  <geom mesh="link6_10" material="dark_grey" class="panda/visual" />
+                  <geom mesh="link6_11" material="white" class="panda/visual" />
+                  <geom mesh="link6_12" material="green" class="panda/visual" />
+                  <geom mesh="link6_13" material="white" class="panda/visual" />
+                  <geom mesh="link6_14" material="dark_grey" class="panda/visual" />
+                  <geom mesh="link6_15" material="dark_grey" class="panda/visual" />
+                  <geom mesh="link6_16" material="white" class="panda/visual" />
+                  <body name="link7" pos="0.088 0 0" quat="1 1 0 0">
+                    <inertial mass="7.35522e-01" pos="1.0517e-2 -4.252e-3 6.1597e-2" fullinertia="1.2516e-2 1.0027e-2 4.815e-3 -4.28e-4 -1.196e-3 -7.41e-4" />
+                    <joint name="joint7" />
+                    <geom mesh="link7_0" material="white" class="panda/visual" />
+                    <geom mesh="link7_1" material="dark_grey" class="panda/visual" />
+                    <geom mesh="link7_2" material="dark_grey" class="panda/visual" />
+                    <geom mesh="link7_3" material="dark_grey" class="panda/visual" />
+                    <geom mesh="link7_4" material="dark_grey" class="panda/visual" />
+                    <geom mesh="link7_5" material="dark_grey" class="panda/visual" />
+                    <geom mesh="link7_6" material="dark_grey" class="panda/visual" />
+                    <geom mesh="link7_7" material="white" class="panda/visual" />
+                    <body name="attachment" pos="0 0 0.1" quat="0.0000463 0 0 1.0">
+                      <site name="attachment_site" />
+                      <body name="stick">
+                        <inertial pos="0 0 0.08340" mass="0.05" diaginertia="2e-4 2e-4 5e-6" />
+                        <geom name="stick_visual" type="capsule" fromto="0 0 0.0068 0 0 0.14540" size="0.00800" contype="0" conaffinity="0" group="2" mass="0" rgba="0.8 0.2 0.1 1" />
+                        <geom name="stick_s0" class="panda/sphere" pos="0 0 0.01340" size="0.01500" />
+                        <geom name="stick_s1" class="panda/sphere" pos="0 0 0.03840" size="0.01500" />
+                        <geom name="stick_s2" class="panda/sphere" pos="0 0 0.06340" size="0.01500" />
+                        <geom name="stick_s3" class="panda/sphere" pos="0 0 0.08840" size="0.01500" />
+                        <geom name="stick_s4" class="panda/sphere" pos="0 0 0.11340" size="0.01500" />
+                        <geom name="stick_s5" class="panda/sphere" pos="0 0 0.13840" size="0.01500" />
+                        <site name="tool_tip_site" pos="0 0 0.16000" />
+                      </body>
+                    </body>
+                    <geom name="link7_s0" class="panda/sphere" pos="0.05440 0.03760 0.08394" size="0.02871" />
+                    <geom name="link7_s1" class="panda/sphere" pos="0.01109 0.03430 0.07713" size="0.03758" />
+                    <geom name="link7_s2" class="panda/sphere" pos="0.03710 0.06437 0.08556" size="0.02344" />
+                    <geom name="link7_s3" class="panda/sphere" pos="0.03883 0.00615 0.07725" size="0.03514" />
+                    <geom name="link7_s4" class="panda/sphere" pos="-0.00336 -0.00348 0.07437" size="0.05182" />
+                  </body>
+                  <geom name="link6_s0" class="panda/sphere" pos="0.08833 -0.02019 -0.00238" size="0.05782" />
+                  <geom name="link6_s1" class="panda/sphere" pos="0.00366 0.00039 0.00710" size="0.05688" />
+                  <geom name="link6_s2" class="panda/sphere" pos="0.07966 0.03552 0.00004" size="0.05696" />
+                  <geom name="link6_s3" class="panda/sphere" pos="0.04459 -0.02081 0.01060" size="0.05533" />
+                  <geom name="link6_s4" class="panda/sphere" pos="0.03732 0.02735 0.00995" size="0.05313" />
+                </body>
+                <geom name="link5_s0" class="panda/sphere" pos="0.00141 0.04669 -0.19315" size="0.05874" />
+                <geom name="link5_s1" class="panda/sphere" pos="0.00007 0.00041 -0.22878" size="0.06383" />
+                <geom name="link5_s2" class="panda/sphere" pos="-0.00025 0.06396 -0.00031" size="0.06910" />
+                <geom name="link5_s3" class="panda/sphere" pos="0.00035 0.09180 -0.06232" size="0.04764" />
+                <geom name="link5_s4" class="panda/sphere" pos="-0.00110 0.07977 -0.12804" size="0.04856" />
+              </body>
+              <geom name="link4_s0" class="panda/sphere" pos="-0.07949 0.08138 0.00228" size="0.07341" />
+              <geom name="link4_s1" class="panda/sphere" pos="-0.04169 0.04246 0.02080" size="0.07546" />
+              <geom name="link4_s2" class="panda/sphere" pos="-0.00413 0.00430 0.04100" size="0.07453" />
+            </body>
+            <geom name="link3_s0" class="panda/sphere" pos="0.07792 0.04065 -0.00459" size="0.07516" />
+            <geom name="link3_s1" class="panda/sphere" pos="0.03876 0.01981 -0.04388" size="0.07496" />
+            <geom name="link3_s2" class="panda/sphere" pos="0.00236 0.00233 -0.08062" size="0.07192" />
+          </body>
+          <geom name="link2_s0" class="panda/sphere" pos="0.00011 -0.08101 0.02658" size="0.07918" />
+          <geom name="link2_s1" class="panda/sphere" pos="0.00004 -0.01046 0.04994" size="0.08311" />
+          <geom name="link2_s2" class="panda/sphere" pos="0.00004 -0.15310 0.00452" size="0.07316" />
+        </body>
+        <geom name="link1_s0" class="panda/sphere" pos="0.00001 -0.02672 -0.08156" size="0.08038" />
+        <geom name="link1_s1" class="panda/sphere" pos="-0.00012 -0.04993 -0.00956" size="0.08262" />
+        <geom name="link1_s2" class="panda/sphere" pos="-0.00008 -0.00388 -0.15331" size="0.07133" />
+      </body>
+      <geom name="link0_s0" class="panda/sphere" pos="-0.02023 -0.00004 0.03121" size="0.10281" />
+      <geom name="link0_s1" class="panda/sphere" pos="-0.09001 0.00005 0.00673" size="0.08173" />
+      <geom name="link0_s2" class="panda/sphere" pos="-0.00705 -0.00065 0.10967" size="0.06991" />
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="link0" body2="link1" />
+    <exclude body1="link5" body2="link7" />
+    <exclude body1="link5" body2="stick" />
+    <exclude body1="link0" body2="link2" />
+    <exclude body1="link0" body2="link3" />
+    <exclude body1="link0" body2="link4" />
+    <exclude body1="link1" body2="link3" />
+    <exclude body1="link1" body2="link4" />
+    <exclude body1="link2" body2="link4" />
+    <exclude body1="link3" body2="link5" />
+    <exclude body1="link3" body2="link6" />
+    <exclude body1="link3" body2="link7" />
+    <exclude body1="link3" body2="stick" />
+    <exclude body1="link4" body2="link6" />
+    <exclude body1="link4" body2="link7" />
+    <exclude body1="link4" body2="stick" />
+  </contact>
+</mujoco>

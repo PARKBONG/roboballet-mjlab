@@ -1,0 +1,502 @@
+{
+ "zenodo": {
+  "record": 16546403,
+  "doi": "10.5281/zenodo.16546403",
+  "url": "https://zenodo.org/api/records/16546403/files/roboballet.tar.zst/content",
+  "archive": "roboballet.tar.zst",
+  "size": 1097095126,
+  "md5": "659f63c725f2237b3ccd10a9ba8f5717",
+  "prefix": "roboballet/data/",
+  "files": {
+   "mujoco_world/4_pandas_world.xml": [
+    2122,
+    "b9dd3e2d1c4ff9decbd24c2dd0a19f47f5e7353168ae2e3d16163886dab4b6ce"
+   ],
+   "mujoco_world/8_pandas_world.xml": [
+    2731,
+    "661ea95d934e73d6979da86f44392214757f59f8c63a74a1f29b703a20aecbee"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/finger_0.obj": [
+    87872,
+    "215098c0fcdf7192f6c503a37cf49e3efecf8a9e1320f02b17c5584d89cc5b2c"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/finger_1.obj": [
+    64651,
+    "cf239e9aca26bba09dbbf1c544c47d87cfc9a2f0637c8bb786af750b6d4eca44"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/hand.stl": [
+    10084,
+    "94493e94f30fe940f2c8ca2f155c3bbe67bbff406d3edf5e261670d2f0f6e2ed"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/hand_0.obj": [
+    9091,
+    "b94aab901086f85df04c019b30f43bf9aa23a7ad0443ec80a8c14662a41cabd2"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/hand_1.obj": [
+    121863,
+    "cd76f7494bb314406a1819c46eb826ee254894f87235714f604a470653d9badb"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/hand_2.obj": [
+    596001,
+    "e0f44a71712afa5b98eb20355eff17763d3e2e19f459b2bef19abed3727e64b3"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/hand_3.obj": [
+    902145,
+    "a431a06d99e88a1b322b3122a01424ee7704daeaad0bc343b90b9604f014ad0c"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/hand_4.obj": [
+    151988,
+    "21f96ef6a8de082e41b1ea9834f1043de359e5d60305541bcb63539581f53bff"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0.stl": [
+    10084,
+    "dfc6d94330de8ddb005b311bfdba9f3b8e1aa7c256b71592ee7ff32cb9a9a5aa"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_0.obj": [
+    296497,
+    "6b9f41a4c203540daaeb7a33cc3d0d6c6a32dc8bba187074eeaf97b3e36b3f9c"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_1.obj": [
+    103978,
+    "57673d2ee2a9db2e10c8986ae57c56a7c39c012b60fd26d7d8549553b664a5ed"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_10.obj": [
+    343308,
+    "c9198b9d8534d628d097b0f2b239bb30343353182df098ce0d9db6bc13326848"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_11.obj": [
+    22295,
+    "f0adec78d6677b7799d25121981270e8bfe119b5c18d08a91ee37a54ad75f65c"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_2.obj": [
+    590892,
+    "1ca435a2a87a9608a146a47955724d43dd7ce10fc3dd3018800aa98f8ba86e05"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_3.obj": [
+    47588,
+    "3e9c6334d2b3b47944af3458ee5f20519abc20fe7ee23063bb53405ccab28046"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_4.obj": [
+    211200,
+    "215d25789704936120f119c0bc1cc7f68516dd3f8f1df61457b71acac3873f26"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_5.obj": [
+    17023,
+    "9361b104e93743045107aa5b15fb1a0835ba9c1f355aae71f56403cf6a9c33f6"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_7.obj": [
+    30699,
+    "2dc0b8ebbbc80e4c065d71e195adbc384f673438641fac82b07b801b4d2837cb"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_8.obj": [
+    3263194,
+    "3b8c436999db5586b8eb47bed2b0aa7de6993868b2681b4c04246eeac42fdb7a"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link0_9.obj": [
+    105629,
+    "45178f97d2b5da6bce11f610212c4ef7d08c73db33a4fc38e1b7f66b93d023f5"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link1.obj": [
+    3274995,
+    "51091e776b16babdbe2f3849b5c041f921d1f11dd94ac19a0f1c81abf496fbae"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link1.stl": [
+    15084,
+    "e41a39a94108fcf56aacff603fc91ec80541f4c1af17b51a0de5617f5566e6d2"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link2.obj": [
+    3295608,
+    "5c9f8e715de52c3eb71b475de35993b3b96081e02abea9f28c414768877fc59b"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link2.stl": [
+    15084,
+    "370f7605a0fae3529db169ded50f52f171024aa792d4d773bc84197301f6a039"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link3.stl": [
+    15084,
+    "0a8d638b9349c6c0eefc4e888636ac4838c4b27170f18a51699321118af709c1"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link3_0.obj": [
+    3046804,
+    "ce2da87f51708e11b189249d41401065dabe89a06e251185a06cef4d5ff27178"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link3_1.obj": [
+    65260,
+    "2880b7753a7173f38fa87ee21da4dfc7fa7be46fbe07bac5aef9e128513cb118"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link3_2.obj": [
+    83591,
+    "670cff81ae84693769ca4ae658c154cf909d81167e7c8d22b70ea977f2504efa"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link3_3.obj": [
+    457684,
+    "30ede0c812efd0e0b767d134a4eae0b84e0fa407bb6325a5a555e0569b3a3ffd"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link4.stl": [
+    15084,
+    "0180ebb5772ec9840cb049750cffb29a9ddc90311752a16ea34757782ef9e48d"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link4_0.obj": [
+    83486,
+    "443bf6d178177cf347951ecf107ccd10ca444e605e375b67304579e5f948806f"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link4_1.obj": [
+    3148001,
+    "ca935ec7cc8b3f0e86aa079c76b0b3bf593b1e9830bab0fa7131ac51577c74f0"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link4_2.obj": [
+    455522,
+    "c89caf26d379c35bb9e191ee2d91d09ab29ecc792b48d8bc10b39e5b38222175"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link4_3.obj": [
+    67497,
+    "1495d17f45bdb230cf58b0beef9da4e8c9cfe76a3d2d38da89017efe5e093136"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link5_0.obj": [
+    824158,
+    "a3238b8f2af0f2eb66d9fe63dc5d41ac52d5d38507241b5ed10e3cb019ab3e71"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link5_1.obj": [
+    63174,
+    "9d994bbf83ec241e301b5197a6846da13f2a4a0582edb2c0f76962c5549649d6"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link5_2.obj": [
+    3856621,
+    "83b4ffe9f772cd7fe182e98640650eebc899aaf01842656574b0416c90dd40a4"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link5_collision_0.obj": [
+    3861,
+    "3e5aa75fb13f193555c3dfb999df91d81df25006a5c3af5338297d78137c129b"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link5_collision_1.obj": [
+    2412,
+    "87cd8f621071df010f774cbde789282b8463840dfe704f8bdfa2e29be0142e15"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link5_collision_2.obj": [
+    3786,
+    "823ab6c8f7b1d79e0844fa071d82a03499ff68e34fddb1ba3451032c22736040"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6.stl": [
+    10084,
+    "20b768e99a0e0440b5754dcca108016434e57937cc356acd9c352ccd3cb27f77"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_0.obj": [
+    157563,
+    "0504c70ebf1b284ee8faae7dcb896b8830bc672a6552015dd5dbd121fa031fb9"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_1.obj": [
+    27106,
+    "45f7ca77695198b6d86ec2417ad4e42e6275044f0f96266699ee8e1057757ac1"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_10.obj": [
+    368502,
+    "365f26c21d10332cab8d8704645cb46930c30b3085956f2d097498c793f24db4"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_11.obj": [
+    32653,
+    "8ae61e08b3ad064f25bbf03b22e59cc15d65883b5a7ce92711aff29df2493901"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_12.obj": [
+    3894,
+    "f28d1bfd62b0244ffd19fb35fe9edefdf583d3c9167db944e87185d919e1d021"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_13.obj": [
+    3798,
+    "0a55fa92dccb261d07200e6565fca4c850fd17f0c1ecf38821c0b97d51796c7d"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_14.obj": [
+    444469,
+    "750ae3ee4781e62e3a045c662195247b03f6642b05aa93104f08258e5f6eba26"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_15.obj": [
+    668552,
+    "5999c1c2497a004a7c4bbe034cdf13744f839d85ae7a11b1bc386c48a3e642e6"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_16.obj": [
+    3675358,
+    "551d7a8b37c53e7a152d008b4e36992e5b5abe74a4be18b57ee6319c27def09f"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_2.obj": [
+    9916,
+    "e54eee4d8232947ee8af65afd5a067e09dac2da6e7e585cb1dccb65496457da0"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_3.obj": [
+    11943,
+    "d4f6a25ef32fa1fa4734146981994ee760232cb077c80fea6487d78a077c7f27"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_4.obj": [
+    13846,
+    "be353480fe71d46f7a96f0a3cbb7e112caaf8d88368826f321a36a253c8749b2"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_5.obj": [
+    11841,
+    "7c87664623c3e1a6cb330db273227a69626dc5e53b4caff1d4ee7911eb3340c6"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_6.obj": [
+    12597,
+    "8fbc031e0d07b795ebf99115c75223141caaba317cab569159f3d477a7821681"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_7.obj": [
+    4382,
+    "7dc5ebb799fe281aab27d6e84e7a4efa0a8e42da2369ec83de3ea3f206f62d73"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_8.obj": [
+    9131,
+    "e3f77381817a341030f9dcc4c4aa7c559f80411b453fd87eb0fefecca82151bf"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link6_9.obj": [
+    17616,
+    "25a56ea9b02a03b6cb5a81f31c54f54d0185e1a0b3937c37e4289d896e50215a"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7.stl": [
+    10084,
+    "92ac6afcf7574c034d3170d8a68e95ac9048ab9d0dd5bbd8311b86e551b9ab1c"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_0.obj": [
+    1362355,
+    "04586b0bde011715cfc22072ac72fe0717eb4d4817bcf665987ce6cd88eb2b93"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_1.obj": [
+    121358,
+    "c3f72289f394c9d6749a4a327fb11f05b203c37c95032c92f28019b40ebe7e00"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_2.obj": [
+    208907,
+    "d2faecedb304d0989040d082410378dc949dbbda23bd18c05134f08aae984db5"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_3.obj": [
+    123684,
+    "b62d87c4d4bdb7b281ed341d347c39dad0e50bf36aed8ac11d050073701d5f70"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_4.obj": [
+    85732,
+    "cb78ccb61fd4ad6c7bff4c4d2e6cb41e1964a5a3e1a28e67c0c6202371cfc018"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_5.obj": [
+    226402,
+    "099071d3090b51471ba52f4f90814fd3089f4975d196e4d488117073d0bfe491"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_6.obj": [
+    99900,
+    "99469e2d95ab74ce0292f2f16954c87a8a7dc16652e62e970fe37c94330a81bb"
+   ],
+   "mujoco_world/assets/franka_emika_panda/assets/link7_7.obj": [
+    792162,
+    "426c3db8a19373f3dc73d4bec672e948121b2914c10e2e7b9c7ea80643a19e54"
+   ],
+   "mujoco_world/assets/franka_emika_panda/hand.xml": [
+    4548,
+    "76911bd328da34894d6f367ed11b285961d49fbc15af4447f5196311e5a86bea"
+   ],
+   "mujoco_world/assets/franka_emika_panda/panda.xml": [
+    14355,
+    "379e3e16d1b9b75a589964fa29dc905d5d9746b9d34f4c69b003dbbfa0be5107"
+   ],
+   "mujoco_world/assets/franka_emika_panda/panda_nohand.xml": [
+    12212,
+    "eadd406d629a9c9f3e21692e43be2d1173f4ee5fa7aa93827080af08407d9f0e"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_arm/adjustable_tool_arm.obj": [
+    58222,
+    "3dcfd1f15cdb16f1a8ac372a0f26aae467bbab9b63dca6f2f211864e60ff92f8"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_arm/adjustable_tool_arm.xml": [
+    630,
+    "7322d63574eec0dc8a99f4fa17de224433c6b38a77d495b95ad84e3e6b9ff0ca"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_arm/adjustable_tool_arm_c01.stl": [
+    3084,
+    "0f9bb104759750e6ccadc8267001cd61b3f67b50f2bf6b1a572061ef1eff2e42"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_arm/material.mtl": [
+    142,
+    "3b72e23d44376ffe42135ca55fb4e90da1a12841878fdfaf375599c812f3b88a"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_base/adjustable_tool_base.obj": [
+    199543,
+    "52b38f6b3fa095de6b7f1de954d04742cd430b4b23539a31003c9dd8a95a2ee3"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_base/adjustable_tool_base.xml": [
+    641,
+    "1d76c32e14128da48ffa4ac60b5924d1c8d96596ccf4af730fd5669048eda661"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_base/adjustable_tool_base_c01.stl": [
+    7484,
+    "a6988edec8ef2ad3d72b1cb8ada920d5bcbb1c263bec194c276e047aafe9fbfc"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_base/adjustable_tool_base_c02.stl": [
+    5584,
+    "f685660b63324da6ef4d4cd6a2a5ef00eaa2cc8c9ce4c5cc30c5c23284410b6c"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_base/material.mtl": [
+    142,
+    "469782f26893c5a51b8bae14af81b8bec498a44f02ea33480fff4e5c019ae597"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_tip/adjustable_tool_tip.obj": [
+    73473,
+    "e00a0e4027629bd11428eeb633e4327d67b830b008bba41da5e5e9c7d9255305"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_tip/adjustable_tool_tip.xml": [
+    624,
+    "3a37fea4ae5a90e90f30555ed877e23f0fbff41978ec132ff418fd9e70fb50bc"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_tip/adjustable_tool_tip_c01.stl": [
+    3084,
+    "9998a3d5270d5de37cbc965dbcb4bdc814a6a603e222b37d2ec94e2ce7875140"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_tip/adjustable_tool_tip_c02.stl": [
+    7784,
+    "3a8507aad9818e28a1067ae4e0da72f4afee7cc46b12c8755555d79bef88856d"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/adjustable_tool_tip/material.mtl": [
+    142,
+    "342007dcad898b6ad9e68107215188a824be93300f001aad609be37350932b24"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/source/adjustable_tool_arm.dae": [
+    66715,
+    "a636a67b64a6f358e79e72cdced06bc403e359f8332aab422fdd545b6e1fa825"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/source/adjustable_tool_base.dae": [
+    189636,
+    "60f90eb57a6d19fba667481ec330af7397d9787ee0ea25c9ad9de53b424e742b"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/source/adjustable_tool_tip.dae": [
+    83860,
+    "3c10d646e559ae8ec66a2406bc5009c76255c6cb498ee3bb1f7d1f98cfbbcede"
+   ],
+   "mujoco_world/assets/franka_emika_panda/tool/tool.xml": [
+    2918,
+    "e7663bd12769b7ec50761d29c7ff460ac1bb9ca03b1a40a412ef53dce70ef688"
+   ],
+   "mujoco_world/assets/quad_table/quad_table.xml": [
+    995,
+    "5ebcaecb07465ca369312d7ac4a4dc962f39215ab98341ae7ce93824469c4137"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_0.obj": [
+    4057131,
+    "e372b41eefe5201ea4a7cb2d4cadc8bb4406c43f418dd6d535424672800bcf4b"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_0.obj.mtl": [
+    201,
+    "6ad6276c28d00ebbd100f1698a4295662ddb79d7f2d1c02fab96bbc07f39741b"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_1.obj": [
+    295756,
+    "cade9d6e949294736be3854b3ca6438e8c25ee3add04398b3433f3c9d913d2c9"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_1.obj.mtl": [
+    201,
+    "6ad6276c28d00ebbd100f1698a4295662ddb79d7f2d1c02fab96bbc07f39741b"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_2.obj": [
+    8296,
+    "cbe6b2c019fd6d234ee6d4fc83afb9103bcb28c820806fab9e7f1be94d074cfa"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_2.obj.mtl": [
+    201,
+    "6ad6276c28d00ebbd100f1698a4295662ddb79d7f2d1c02fab96bbc07f39741b"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_3.obj": [
+    2893716,
+    "7ef0f649931d43758491f97c4702149e4fb14607bf326279d6ef6b11edc01e25"
+   ],
+   "mujoco_world/assets/quad_table/quad_table_3.obj.mtl": [
+    201,
+    "6ad6276c28d00ebbd100f1698a4295662ddb79d7f2d1c02fab96bbc07f39741b"
+   ],
+   "mujoco_world/assets/table_cube/table_cube.xml": [
+    1062,
+    "bd087f8eb915dfa1fb5d6dd17a50500303f153ca158a1a3a7f61399b91aa173d"
+   ],
+   "mujoco_world/assets/table_cube/table_cube_collision.stl": [
+    29484,
+    "acdd1cae5d2a6004d6473dabfa40844ff7c76bd339d7790572e61b95d1663312"
+   ],
+   "mujoco_world/assets/table_cube/table_cube_vis_0.obj": [
+    475588,
+    "08862ded77bacd381f731009b86a17b23d9100487fa13dbe30e393ab09c50a60"
+   ],
+   "mujoco_world/assets/table_cube/table_cube_vis_0.obj.mtl": [
+    201,
+    "b768e3011c90c7427994337d14411afd4a96b6a1218f9bbac6632cd973f39ff1"
+   ],
+   "mujoco_world/assets/table_cube/table_cube_vis_1.obj": [
+    1724146,
+    "4eb4324752d39a94e163b0dec4353c2666c0bd960b9f451846fa791d8a9af2ef"
+   ],
+   "mujoco_world/assets/table_cube/table_cube_vis_1.obj.mtl": [
+    201,
+    "b768e3011c90c7427994337d14411afd4a96b6a1218f9bbac6632cd973f39ff1"
+   ],
+   "paper_test_tasksets/test_10targets.pbtxt": [
+    51488,
+    "ba756eca09fe94a2e9106957cb88d9a9fe3fd0e1ead495f14cb5fb55ee73b967"
+   ],
+   "paper_test_tasksets/test_20targets.pbtxt": [
+    102730,
+    "0f0b7ae2661cb932fc09fe6b7e2aab831021f68439fd53f6abc61773858e67a3"
+   ],
+   "paper_test_tasksets/test_40targets.pbtxt": [
+    205110,
+    "0d2f40da898054e63289f9e947815400c86d6bf35c10768f3dfee4079f8535aa"
+   ],
+   "start_states/4r_10t_30o.pb": [
+    321500000,
+    "0c31a3a0f5340727b4ba0080e589daad687a9ef6568f1f6073a65d6cb822c7d0"
+   ],
+   "start_states/4r_40t_30o.pb": [
+    506000000,
+    "2777388c2f3800d3395b77890d0c14634c65323af03878178d6b648f9da84be1"
+   ],
+   "start_states/8r_10t_30o.pb": [
+    340000000,
+    "fcfc5d4aaa4ba6ae5c877015ed69c365d7fa67fe084c4849e21787b2677690cf"
+   ],
+   "start_states/8r_40t_30o.pb": [
+    524500000,
+    "2e2dfdac7ae2d1bb5d275ece9c91661131000a877e45350de06be7fce7987c58"
+   ]
+  }
+ },
+ "release": {
+  "tag": "data-v1",
+  "assets": {
+   "4r_10t_30o_heldout.pt": {
+    "size": 14375909,
+    "sha256": "de93a234d107f7df7d1d272da1e378c62717413b042318707dbc55643925e37a",
+    "path": "scenes/4r_10t_30o_heldout.pt",
+    "group": "main"
+   },
+   "4r_10t_30o_train.pt": {
+    "size": 143705861,
+    "sha256": "6a83a8bf459fd35c189a5d4e0079e47647c232b6f14141d986f3a0da07b315fb",
+    "path": "scenes/4r_10t_30o_train.pt",
+    "group": "main"
+   },
+   "4r_10t_30o_train_mesh_tool.pt": {
+    "size": 143706085,
+    "sha256": "726cb7a8e05622128c110f2495ea0f3eaa1c40e4b7aecae27952f8e3bd921736",
+    "path": "scenes/4r_10t_30o_train_mesh_tool.pt",
+    "group": "test"
+   },
+   "8r_40t_30o_heldout.pt": {
+    "size": 27445925,
+    "sha256": "7b9879d45af3c73fc648aaec37996304e2e5651de2dcad52adbc1a148b7febbd",
+    "path": "scenes/8r_40t_30o_heldout.pt",
+    "group": "main"
+   },
+   "8r_40t_30o_train.pt": {
+    "size": 274405893,
+    "sha256": "a302adf92ca56901b5ce352df8ded4c12c1a5c72c442f62531a8899dbcb75f11",
+    "path": "scenes/8r_40t_30o_train.pt",
+    "group": "main"
+   },
+   "8r_40t_30o_train_mesh_tool.pt": {
+    "size": 274406117,
+    "sha256": "870cce98f43fbaf2b340709a8f93df992d27342be7f86bcd1d8d86013139c5ae",
+    "path": "scenes/8r_40t_30o_train_mesh_tool.pt",
+    "group": "test"
+   }
+  }
+ }
+}

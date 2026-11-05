@@ -1,0 +1,23 @@
+# Downloaded and generated data: fetch-data and gen_scenes write here. The small pools in
+# src/roboballet_mjlab/data/ are in git.
+/data/
+
+# Runs and their logs.
+/logs/
+/runs/
+wandb/
+tb/
+events.out.tfevents.*
+*.shards/
+
+# Environments and builds.
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Written by MuJoCo next to wherever it runs.
+MUJOCO_LOG.TXT
