@@ -36,6 +36,10 @@ class FastTD3Cfg:
 
   std_min: float = 0.001
   std_max: float = 0.4
+  # Not in the reference, which keeps std_max fixed. The original's sigma falls 0.8x per 100k steps
+  # (TrainCfg.policy_sigma_decay). A cosine on std_max over this many grad steps, 0 keeps it fixed.
+  noise_decay_steps: int = 0
+  noise_end_fraction: float = 1.0
 
   # Same rule and same module as TrainCfg. The flush is 256 here and 8 there: at most 30,720 rows, about 30 rounds late at
   # W=1024, where DESIGN 14.3 item 5 sized the 8 to a limiter this agent does not have.

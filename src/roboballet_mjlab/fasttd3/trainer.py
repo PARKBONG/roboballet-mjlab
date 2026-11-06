@@ -25,7 +25,7 @@ import torch.distributed as dist
 from roboballet_mjlab.agent.features import Topology, build_graph
 from roboballet_mjlab.config import EnvCfg, ModelCfg
 from roboballet_mjlab.env.ballet_env import BalletEnv
-from roboballet_mjlab.fasttd3.agent import ActorStats, Batch, CriticStats, FastTD3
+from roboballet_mjlab.fasttd3.agent import ActorStats, Batch, CriticStats, FastTD3, decayed_lr
 from roboballet_mjlab.fasttd3.config import FastTD3Cfg
 from roboballet_mjlab.replay.hindsight import HindsightQueue
 from roboballet_mjlab.replay.replay import STAT_NAMES, EpisodeBatch, EpisodeBuffer, ReplayBuffer
@@ -82,14 +82,21 @@ def policy_update_due(i: int, global_step: int, cfg: FastTD3Cfg) -> bool:
   return global_step % cfg.policy_frequency == 0
 
 
-def draw_scales(fresh: torch.Tensor, cfg: FastTD3Cfg) -> torch.Tensor:
+def scale_max(cfg: FastTD3Cfg, grad_steps: int) -> float:
+  """std_max, after the optional cosine of noise_decay_steps."""
+  return decayed_lr(cfg.std_max, grad_steps, cfg.noise_decay_steps, cfg.noise_end_fraction)
+
+
+def draw_scales(fresh: torch.Tensor, cfg: FastTD3Cfg, grad_steps: int = 0) -> torch.Tensor:
   """A uniform draw in [0, 1) to a noise scale, fast_td3.py:288-290."""
-  return fresh * (cfg.std_max - cfg.std_min) + cfg.std_min
+  return fresh * (scale_max(cfg, grad_steps) - cfg.std_min) + cfg.std_min
 
 
-def resample_scales(scales: torch.Tensor, ended: torch.Tensor, fresh: torch.Tensor, cfg: FastTD3Cfg) -> torch.Tensor:
+def resample_scales(
+  scales: torch.Tensor, ended: torch.Tensor, fresh: torch.Tensor, cfg: FastTD3Cfg, grad_steps: int = 0
+) -> torch.Tensor:
   """New scales for worlds that ended, one per world, fast_td3.py:309-321."""
-  return torch.where(ended[:, None, None], draw_scales(fresh, cfg), scales)
+  return torch.where(ended[:, None, None], draw_scales(fresh, cfg, grad_steps), scales)
 
 
 def behaviour_action(mean: torch.Tensor, scales: torch.Tensor, normals: torch.Tensor) -> torch.Tensor:
@@ -319,7 +326,8 @@ class Trainer:
     if finished is not None:
       self._store(finished)
       # When that world ends, and never otherwise, fast_td3.py:309-321.
-      self.noise_scale = resample_scales(self.noise_scale, out.terminal, self._draw_fresh_scales(), self.cfg)
+      self.noise_scale = resample_scales(self.noise_scale, out.terminal, self._draw_fresh_scales(), self.cfg,
+                                         self.agent.grad_steps)
       self._stagger_at = self._stagger_at.masked_fill(out.terminal, -1)  # Ended on its own: already out of step.
     if self._can_learn():
       self._learn()
