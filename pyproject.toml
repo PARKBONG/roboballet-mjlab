@@ -33,6 +33,10 @@ dependencies = [
 # Only --wandb-project uses it. mjlab 1.6.0 itself requires wandb, so it is installed either way.
 wandb = ["wandb==0.31.0"]
 
+[dependency-groups]
+# The tests on branch test. pytest as development used it.
+dev = ["pytest==9.2.0"]
+
 [project.scripts]
 # mjlab 1.6.0 installs its own train and play into the same environment, and they cannot run this
 # env (mjlab/scripts/train.py:110 builds a ManagerBasedRlEnv), so ours carry a prefix.
