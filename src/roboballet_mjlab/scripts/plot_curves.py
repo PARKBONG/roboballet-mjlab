@@ -156,6 +156,7 @@ def benchmark_figure(sets: dict[str, list[Series]], out: Path) -> None:
         steps, values, _ = series['train/policy_lr']
         lr_axis.plot(learner_hours(series, steps), values, color=color, linewidth=LINE_WIDTH)
   lr_axis.set_yscale('log')
+  lr_axis.set_yticks([1e-5, 3e-5, 1e-4, 3e-4], ['1e-5', '3e-5', '1e-4', '3e-4'])
   for ax in (rate_axis, lr_axis):
     ax.set_xscale('log')
     ax.set_xticks(HOUR_TICKS, [str(t) for t in HOUR_TICKS])
