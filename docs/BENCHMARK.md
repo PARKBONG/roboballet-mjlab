@@ -17,12 +17,15 @@
 | FastTD3 | 1 | 0.41 h | 0.64 h | 0.86 h | 0.98 h | 1.24 h | 3 h |
 | | 2 | 0.41 h | 0.64 h | 0.81 h | 1.09 h | 1.29 h | 3 h |
 | | 3 | 0.41 h | 0.58 h | 0.80 h | 1.08 h | 1.39 h | 3 h |
+| | 4, given 6 h | 0.31 h | 0.46 h | 0.70 h | 0.85 h | 1.10 h | 6 h |
 | rsl-rl SAC | 1 | 0.76 h | 1.57 h | not in 3 h | | | 3 h |
 | | 2 | 0.75 h | 1.23 h | 2.79 h | | | 3 h |
 | | 3 | 0.80 h | 1.54 h | not in 3 h | | | 3 h |
 | rsl-rl PPO | 1, 2, 3 | never | | | | | 3 h each |
 
 The original's seeds 2 and 3 ran while this repository's runs used the other GPUs and 8 of the 72 cores, so their hours are less clean than seed 1's. They ran to 1M grad steps, from a copy of the original with two fetch timeouts raised from 60 to 600 s, because the learner started up to 69 s after the actors and the 60 s timeout killed the run.
+
+FastTD3's seed 4 ran 6 h to see how far the preset goes: 0.989 from 3 h to 6 h, 0.9886 at its final evaluation (4,096 scenes), 0.99 on the trailing mean once, at 5.1 h. So 3 more hours add 0.1 to 0.2 points. Its hours to each milestone are shorter than seeds 1 to 3 for two reasons: it ran 22.3 grad steps/s over its first 60k, against 19.5 to 19.6 for seeds 1 to 3, which then shared the same 8 host cores with 4 other runs; and it was ahead per grad step early (0.88 against 0.80 at 28k), which is seed variation.
 
 In grad steps, FastTD3 reached 95% after 56k to 60k, the original after 578k to 606k. A FastTD3 grad step uses a batch of 2,048 against the original's 128.
 

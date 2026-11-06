@@ -21,7 +21,7 @@
 
 ![Task rate and learning rate against hours](docs/figures/benchmark.png)
 
-FastTD3 is **4 to 5x faster to 95%** than the original on the same machine, and 7x faster than the 6 h the paper gives for its smallest problems. In 3 hours it reaches about 0.987, which the original's seed 1 reaches after 7.2 h (seeds 2 and 3 stopped at 7.4 h, before it) and the TD3 port after 5.7 to 6.1 h. The original goes on to 0.993 after 15 h. **PPO cannot learn this sparse task without hindsight**: it solved no task in 3 h on any of 3 seeds, while the same code learns with a dense reward. Agents and every setting changed: [docs/BENCHMARK.md](docs/BENCHMARK.md).
+FastTD3 is **4 to 5x faster to 95%** than the original on the same machine, and 7x faster than the 6 h the paper gives for its smallest problems. In 3 hours it reaches about 0.987, which the original's seed 1 reaches after 7.2 h (seeds 2 and 3 stopped at 7.4 h, before it) and the TD3 port after 5.7 to 6.1 h. The original goes on to 0.993 after 15 h. A fourth FastTD3 seed given 6 h ends at 0.989, so the extra 3 h add 0.1 to 0.2 points. **PPO cannot learn this sparse task without hindsight**: it solved no task in 3 h on any of 3 seeds, while the same code learns with a dense reward. Agents and every setting changed: [docs/BENCHMARK.md](docs/BENCHMARK.md).
 
 **The TD3 port matches the original.** Same task, network, TD3 and hindsight, 3 seeds each.
 
