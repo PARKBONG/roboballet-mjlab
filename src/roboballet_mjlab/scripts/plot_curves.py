@@ -156,6 +156,7 @@ def benchmark_figure(sets: dict[str, list[Series]], out: Path) -> None:
         steps, values, _ = series['train/policy_lr']
         lr_axis.plot(learner_hours(series, steps), values, color=color, linewidth=LINE_WIDTH)
   lr_axis.set_yscale('log')
+  lr_axis.set_yticks([1e-5, 3e-5, 1e-4, 3e-4], ['1e-5', '3e-5', '1e-4', '3e-4'])
   for ax in (rate_axis, lr_axis):
     ax.set_xscale('log')
     ax.set_xticks(HOUR_TICKS, [str(t) for t in HOUR_TICKS])
@@ -194,12 +195,13 @@ def same_performance_figure(sets: dict[str, list[Series]], out: Path) -> None:
 def main() -> None:
   parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
   parser.add_argument('runs', nargs='+', help='NAME=DIRECTORY[,DIRECTORY...], one directory per seed')
-  parser.add_argument('--reference', type=Path, required=True,
-                      help="The original run's tensorboard_log directory, as for compare_reference.")
+  parser.add_argument('--reference', type=Path, nargs='+', required=True,
+                      help="The original runs' tensorboard_log directories, one per seed, as for compare_reference.")
   parser.add_argument('--out', type=Path, default=Path(__file__).resolve().parents[3] / 'docs/figures')
   parser.add_argument('--prefix', default='g8')
   args = parser.parse_args()
-  sets: dict[str, list[Series]] = {'reference (original code)': [load_reference(args.reference)]}
+  references = [load_reference(path) for path in args.reference]
+  sets: dict[str, list[Series]] = {f'original code, {len(references)} seed{"s" if len(references) > 1 else ""}': references}
   for pair in args.runs:
     name, directories = pair.split('=', 1)
     sets[name] = [load_run(Path(d)) for d in directories.split(',')]

@@ -386,7 +386,9 @@ class Trainer:
     directory.mkdir(exist_ok=True)
     step = self.grad_steps()
     with self.profiler.phase('checkpoint'):
-      atomic_save({'step': step, 'policy': self._policy_state()}, directory / f'policy_{step:08d}.pt')
+      # `model` says what built it, which scripts/eval.py needs for a 3-layer policy.
+      atomic_save({'step': step, 'policy': self._policy_state(), 'model': dataclasses.asdict(self.model_cfg)},
+                  directory / f'policy_{step:08d}.pt')
     self._checkpoint_seconds += time.perf_counter() - start
     self._next_snapshot = (rounds // every + 1) * every
 
