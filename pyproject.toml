@@ -6,6 +6,7 @@ build-backend = "hatchling.build"
 name = "roboballet-mjlab"
 version = "0.1.0"
 description = "RoboBallet ported to mjlab: the original's TD3, FastTD3, SAC and PPO on GPU-batched multi-arm reaching."
+authors = [{ name = "Bonggyeong Park", email = "iampbk@kaist.ac.kr" }]
 license = "Apache-2.0"
 readme = "README.md"
 license-files = ["LICENSE", "NOTICE", "third_party/*/LICENSE", "third_party/*/*/LICENSE"]
