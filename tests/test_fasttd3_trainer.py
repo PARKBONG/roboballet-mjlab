@@ -99,6 +99,12 @@ def test_explore_matches_the_reference():
 
 def test_the_scale_range_and_the_draw():
   cfg = FastTD3Cfg()
+  decaying = FastTD3Cfg(noise_decay_steps=1000, noise_end_fraction=0.1)
+  assert draw_scales(torch.ones(1), decaying, 0).item() == pytest.approx(0.4)
+  assert draw_scales(torch.ones(1), decaying, 500).item() == pytest.approx(0.22)
+  assert draw_scales(torch.ones(1), decaying, 2000).item() == pytest.approx(0.04)
+  assert draw_scales(torch.zeros(1), decaying, 2000).item() == pytest.approx(0.001)
+  assert draw_scales(torch.ones(1), cfg, 10**6).item() == pytest.approx(0.4)
   assert draw_scales(torch.zeros(1), cfg).item() == pytest.approx(0.001)
   assert draw_scales(torch.ones(1), cfg).item() == pytest.approx(0.4)
   scales = draw_scales(torch.rand(100_000, generator=torch.Generator().manual_seed(0)), cfg)
