@@ -8,20 +8,20 @@
 
 ## Results
 
-**Hours to the paper's 95% of tasks solved.** 4 robots, 10 targets, 30 obstacles. One B200 per run, hours from launch.
+**Hours to the paper's 95% of tasks solved.** 4 robots, 10 targets, 30 obstacles. One B200 per run, hours from launch. The original's seeds 2 and 3 ran with two fetch timeouts raised from 60 to 600 s, which do not touch learning.
 
 | | 95% | 98% | Tasks solved after 3 h | Seeds |
 |---|---:|---:|---:|---:|
-| Paper, A100 and 64 CPU cores (as stated) | 6 to 24 h | | | |
+| Paper, A100 and 64 CPU cores, over all problem sizes (as stated) | 6 to 24 h | | | |
 | Original code, this machine | 3.5 to 4.1 h | 5.7 to 6.7 h | 0.91 to 0.94 | 3 |
-| TD3 port | 3.3 h | 4.6 to 5.1 h | 0.94 to 0.95 | 3 |
-| **FastTD3** | **0.8 to 0.9 h** | **1.2 to 1.4 h** | **0.987 to 0.988** | 3 |
+| TD3 port | 3.3 h | 4.6 to 5.1 h | 0.94 | 3 |
+| **FastTD3** | **0.8 to 0.9 h** | **1.2 to 1.4 h** | **0.986 to 0.988** | 3 |
 | rsl-rl SAC | 2.8 h, 1 seed of 3 | | 0.94 to 0.95 | 3 |
 | rsl-rl PPO | never | | 0.00 | 3 |
 
 ![Task rate and learning rate against hours](docs/figures/benchmark.png)
 
-FastTD3 is **4 to 5x faster to 95%** than the original on the same machine, and 7x faster than the paper's lower bound. In 3 hours it reaches 0.987, where the original reaches 0.99 after 9.1 h and the TD3 port after 7.0 to 7.7 h. PPO cannot learn this sparse task without hindsight. Agents and every setting changed: [docs/BENCHMARK.md](docs/BENCHMARK.md).
+FastTD3 is **4 to 5x faster to 95%** than the original on the same machine, and 7x faster than the 6 h the paper gives for its smallest problems. In 3 hours it reaches about 0.987, which the original's seed 1 reaches after 7.2 h (seeds 2 and 3 stopped at 7.4 h, before it) and the TD3 port after 5.7 to 6.1 h. The original goes on to 0.993 after 15 h. **PPO cannot learn this sparse task without hindsight**: it solved no task in 3 h on any of 3 seeds, while the same code learns with a dense reward. Agents and every setting changed: [docs/BENCHMARK.md](docs/BENCHMARK.md).
 
 **The TD3 port matches the original.** Same task, network, TD3 and hindsight, 3 seeds each.
 
@@ -33,21 +33,23 @@ FastTD3 is **4 to 5x faster to 95%** than the original on the same machine, and 
 | Collisions at 1M, robot-steps | 7.4 to 7.9 | 6.3 to 8.3 |
 | One policy scored by the original's evaluator and by the port's | 0.9931 and 0.9931 | 0.9897 to 0.9916 and 0.9905 to 0.9919 |
 
+The original's seeds 2 and 3 stopped at 999k grad steps, so their 1M values are the mean over 954k to 994k.
+
 ![Original and TD3 port against grad steps](docs/figures/parity.png)
 
-The last row is the final policies: the original's at 1.87M grad steps, the port's 3 seeds at 1.8M. The port runs 1.6x as many grad steps per second and uses 1 CPU core where the original uses 64. Details and the differences that remain: [docs/evidence/](docs/evidence/).
+The last row is the final policies: the original's at 1.87M grad steps, the port's 3 seeds at 1.8M. The port runs 1.4 to 1.6x as many grad steps per second and averages 1 CPU core, where the original was given 64. Details and the differences that remain: [docs/evidence/](docs/evidence/).
 
 **Final policies,** 4,096 random scenes and 1,280 taskset episodes each.
 
 | | Training | Tasks solved | All 10 solved | Episode length | Collisions | Paper's tasksets |
 |---|---|---:|---:|---:|---:|---:|
-| Original, seed 1 | 1.87M steps, 15 h | 0.993 | 0.94 | 61 | 4.5 | 0.986 |
+| Original, seed 1 | 1.87M steps, 15 h | 0.993 | 0.94 | 61 | 4.4 | 0.986 |
 | TD3 port, 3 seeds | 1.8M steps, 9.1 to 9.4 h | 0.991 to 0.992 | 0.92 to 0.93 | 61 to 63 | 3.2 to 4.8 | 0.972 to 0.989 |
-| FastTD3, 3 seeds | 3 h | 0.987 to 0.988 | 0.88 to 0.89 | 70 to 71 | 2.3 to 2.7 | 0.974 to 0.981 |
+| FastTD3, 3 seeds | 3 h | 0.986 to 0.988 | 0.88 to 0.89 | 70 to 71 | 2.3 to 2.7 | 0.974 to 0.981 |
 | rsl-rl SAC, 3 seeds | 3 h | 0.940 to 0.951 | 0.55 to 0.61 | 91 to 94 | 2.8 to 3.3 | 0.915 to 0.935 |
-| FastTD3, sphere arm, 3 seeds | 3 h | 0.976 to 0.982 | 0.81 to 0.85 | 74 to 76 | 3.0 to 3.3 | 0.985 to 1.000 |
+| FastTD3, sphere arm, 3 seeds | 3 h | 0.976 to 0.982 | 0.81 to 0.85 | 74 to 76 | 3.0 to 3.3 | 0.80 to 0.84 |
 
-The sphere arm ran before FastTD3's exploration decay was added, and its tasksets are its own, filtered for the stick. On the paper's tasksets, made for the original's tilted tool, it solves 0.80 to 0.84.
+The sphere arm ran before FastTD3's exploration decay was added. Its training scenes are its own, regenerated for the stick, and the paper's tasksets were made for the original's tilted tool. On tasksets regenerated for the stick it solves 0.985 to 1.000.
 
 ## Same and different
 
@@ -55,12 +57,13 @@ The sphere arm ran before FastTD3's exploration decay was added, and its taskset
 |---|---|
 | Task, reward, observations, episode end | Simulator: MuJoCo Warp on the GPU, all worlds in one process, instead of 64 CPU actors |
 | Graph network, TD3, hindsight, replay rules | Framework: PyTorch instead of JAX, with the original's bf16 rounding reproduced |
-| Evaluation protocol and sets | New: FastTD3, SAC, PPO, and an arm of 36 collision spheres with a straight stick |
+| Evaluation rules (no exploration noise, same metrics) and sets | Evaluation size: 1,024 episodes every 20k steps in the trainer, instead of 50 on separate CPU evaluators |
+| | New: FastTD3, SAC, PPO, and an arm of 36 collision spheres with a straight stick |
 | Hyperparameters of the TD3 agent | Each check, with numbers: [docs/evidence/](docs/evidence/) |
 
 ## Install
 
-Linux x86-64 with an NVIDIA GPU whose driver supports CUDA 13.2.
+Linux x86-64 with an NVIDIA GPU and a CUDA 13 driver. The results here used driver 580.95.05 (CUDA 13.1) with PyTorch's CUDA 13.2 build.
 
 ```bash
 uv sync
