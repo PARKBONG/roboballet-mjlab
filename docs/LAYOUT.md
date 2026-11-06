@@ -7,7 +7,7 @@ What each directory and module holds, and what it imports. Taken from DESIGN sec
 | Path | Holds |
 |---|---|
 | `src/roboballet_mjlab/` | The package, below |
-| `pyproject.toml` | Package metadata, dependencies, and `train` and `play` commands like mjlab's. mjlab's own `train` cannot run this env, because it builds a `ManagerBasedRlEnv` (`mjlab/scripts/train.py:110`) |
+| `pyproject.toml` | Package metadata, dependencies, and the commands `ballet-train`, `ballet-play`, `ballet-eval` and `ballet-fetch-data`, in the form of mjlab's `train` and `play`. They carry a prefix because mjlab installs its own `train` and `play` into the same environment, and those cannot run this env: they build a `ManagerBasedRlEnv` (`mjlab/scripts/train.py:110`) |
 | `tests/` | pytest suites, with goldens in `tests/golden/`. Branch `test` only |
 | `data/` | Downloaded and generated data, not in git. See "Data" below |
 | `docs/` | `DESIGN.md`, the design and every decision in it. `LICENSES.md`, the licence check. `LAYOUT.md`, this file. `evidence/`, the verified comparisons with the original |
@@ -45,6 +45,9 @@ Paths are relative to `src/roboballet_mjlab/`. The env is direct-style, with no 
 | `sac/` | rsl_rl_sac's SAC update: `config`, `agent`, `trainer`, `train` | same as `fasttd3/` |
 | `ppo/` | rsl-rl's PPO as installed: `config`, `models` (GNN actor and critic), `vecenv` (adapter), `train`. No replay and no hindsight | `agent/{features,networks}`, `env`, `train/{evaluator,logger,profiler}` |
 | `scripts/` | `train` (td3 agent), `eval`, `gen_scenes`, `render`, `plot_curves`, `compare_reference` | what each one runs |
+| `cli/` | The four commands. `train` resolves a task and an agent preset and runs that agent's train module. `play` evaluates and records a video through `scripts/render`. `eval` runs `scripts/eval` on a task's sets | `tasks`, `paths`, the agents' train modules, `scripts/{eval,render}` |
+| `tasks/` | The task registry, `RoboBallet-4R10T-Mesh`, `-4R10T-Spheres`, `-8R40T-Mesh`, `-8R40T-Spheres`: arm model, scene pool and evaluation sets. The agent presets, with every override written out; the config dataclasses keep the sources' defaults | `paths` |
+| `scripts/fetch_data.py`, `data/manifest.json` | `ballet-fetch-data`: the original's files from Zenodo record 16546403 and the scene pools from this repository's release `data-v1`, each checked by size and sha256 against the manifest | `paths` |
 
 The four agents share `env/`, `replay/` (all except PPO), `agent/features.py`, the networks and `train/evaluator.py`. No agent imports another agent's package. `fasttd3/`, `sac/` and `ppo/` do not import `train/trainer.py`. They reach `agent/td3.py` only through `train/evaluator.py`, which takes `matmul_precision` from it (DESIGN 12). `fasttd3/` and `sac/` average gradients across GPUs themselves.
 
