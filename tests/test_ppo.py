@@ -990,7 +990,7 @@ def test_snapshots_hold_the_mean_for_load_policy(tmp_path):
   assert load_policy(path, policy) == t.grad_steps(), 'a checkpoint fits as well'
   assert torch.equal(flat(policy).to(DEVICE), flat(t.actor.net))
   state = torch.load(tmp_path / POLICY_DIR / names[-1], map_location='cpu', weights_only=True)
-  assert set(state) == {'step', 'policy'}
+  assert set(state) == {'step', 'policy', 'model'}
 
 
 def test_snapshot_period_can_be_turned_off(tmp_path):
