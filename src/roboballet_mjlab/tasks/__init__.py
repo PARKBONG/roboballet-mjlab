@@ -123,8 +123,9 @@ AGENTS: dict[str, AgentPreset] = {
   'fasttd3': AgentPreset(
     module='roboballet_mjlab.fasttd3.train',
     description='FastTD3, the main agent. Preset: the 3-layer model, rates 2e-4 with a cosine to 0.1 over 100k '
-                'grad steps, 3-step returns.',
-    set=('lr_policy=2e-4', 'lr_critic=2e-4', 'n_step=3', 'lr_decay_steps=100000', 'lr_end_fraction=0.1'),
+                'grad steps, 3-step returns, and the exploration cap 0.4 cosine-decayed to 0.1 over the same steps.',
+    set=('lr_policy=2e-4', 'lr_critic=2e-4', 'n_step=3', 'lr_decay_steps=100000', 'lr_end_fraction=0.1',
+         'noise_decay_steps=100000', 'noise_end_fraction=0.25'),
     model_set=_SMALL_MODEL,
   ),
   'sac': AgentPreset(
