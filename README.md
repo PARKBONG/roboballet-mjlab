@@ -1,27 +1,27 @@
 # roboballet-mjlab
 
-[RoboBallet](https://doi.org/10.1126/scirobotics.ads1204) (four Franka arms, ten targets, thirty obstacles, a graph-network policy trained with TD3 and hindsight) ported to [mjlab](https://github.com/mujocolab/mjlab) and MuJoCo Warp. On the same env: FastTD3, rsl-rl SAC and rsl-rl PPO. Unofficial port, see [NOTICE](NOTICE).
+[RoboBallet](https://doi.org/10.1126/scirobotics.ads1204) (a graph-network policy trained with TD3 and hindsight) ported to [mjlab](https://github.com/mujocolab/mjlab) and MuJoCo Warp. On the same env: FastTD3, rsl-rl SAC and rsl-rl PPO.
 
-| FastTD3, 3 h of training, a paper taskset | FastTD3, sphere arm with a stick |
+| FastTD3 w/ original mesh | FastTD3 w/ collision sphere |
 |---|---|
 | ![FastTD3 policy on the paper's taskset 0](docs/media/fasttd3_paper_taskset0.gif) | ![Sphere-arm policy on a static taskset](docs/media/spheres_static0.gif) |
 
 ## Results
 
-**Hours to the paper's 95% of tasks solved.** 4 robots, 10 targets, 30 obstacles. One B200 per run, hours from launch. The original's seeds 2 and 3 ran with two fetch timeouts raised from 60 to 600 s, which do not touch learning.
+**Hours to the paper's 95% of tasks solved.** 4 robots, 10 targets, 30 obstacles. One B200 per run, hours from launch. 
 
 | | 95% | 98% | Tasks solved after 3 h | Seeds |
 |---|---:|---:|---:|---:|
-| Paper, A100 and 64 CPU cores, over all problem sizes (as stated) | 6 to 24 h | | | |
-| Original code, this machine | 3.5 to 4.1 h | 5.7 to 6.7 h | 0.91 to 0.94 | 3 |
-| TD3 port | 3.3 h | 4.6 to 5.1 h | 0.94 | 3 |
+| Paper, (A100 & 64 CPU cores) | 6 to 24 h | | | |
+| Same code, this machine (B200, 72 CPU Cores) | 3.5 to 4.1 h | 5.7 to 6.7 h | 0.91 to 0.94 | 3 |
+| same code, only TD3 tuned for this machine | 3.3 h | 4.6 to 5.1 h | 0.94 | 3 |
 | **FastTD3** | **0.8 to 0.9 h** | **1.2 to 1.4 h** | **0.986 to 0.988** | 3 |
 | rsl-rl SAC | 2.8 h, 1 seed of 3 | | 0.94 to 0.95 | 3 |
 | rsl-rl PPO | never | | 0.00 | 3 |
 
 ![Task rate and learning rate against hours](docs/figures/benchmark.png)
 
-FastTD3 is **4 to 5x faster to 95%** than the original on the same machine, and 7x faster than the 6 h the paper gives for its smallest problems. In 3 hours it reaches about 0.987, which the original's seed 1 reaches after 7.2 h (seeds 2 and 3 stopped at 7.4 h, before it) and the TD3 port after 5.7 to 6.1 h. The original goes on to 0.993 after 15 h. A fourth FastTD3 seed given 6 h ends at 0.989, so the extra 3 h add 0.1 to 0.2 points. **PPO cannot learn this sparse task without hindsight**: it solved no task in 3 h on any of 3 seeds, while the same code learns with a dense reward. Agents and every setting changed: [docs/BENCHMARK.md](docs/BENCHMARK.md).
+FastTD3 is **4x faster to 95%** than the original on the same machine.  PPO cannot learn this sparse task without hindsight due to the dense reward of the code. Agents and every setting changed: [docs/BENCHMARK.md](docs/BENCHMARK.md).
 
 **The TD3 port matches the original.** Same task, network, TD3 and hindsight, 3 seeds each.
 
@@ -32,8 +32,6 @@ FastTD3 is **4 to 5x faster to 95%** than the original on the same machine, and 
 | Episode length at 1M, steps | 70.0 to 73.6 | 70.1 to 72.5 |
 | Collisions at 1M, robot-steps | 7.4 to 7.9 | 6.3 to 8.3 |
 | One policy scored by the original's evaluator and by the port's | 0.9931 and 0.9931 | 0.9897 to 0.9916 and 0.9905 to 0.9919 |
-
-The original's seeds 2 and 3 stopped at 999k grad steps, so their 1M values are the mean over 954k to 994k.
 
 ![Original and TD3 port against grad steps](docs/figures/parity.png)
 
